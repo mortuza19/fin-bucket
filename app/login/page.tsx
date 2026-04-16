@@ -28,7 +28,7 @@ export default function LoginPage() {
       router.push(isNewUser ? "/onboarding" : "/dashboard");
     } catch (err) {
       console.error("Google sign-in failed", err);
-      const message = "We couldn’t sign you in. Please try again or refresh the page.";
+      const message = "We couldn\'t sign you in. Please try again or refresh the page.";
       toast.error(message);
     } finally {
       setLoading(false);
@@ -36,7 +36,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-end justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="relative min-h-screen w-full flex items-end justify-center bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50">
       {}
       <div className="absolute inset-0" />
 
@@ -72,6 +72,11 @@ export default function LoginPage() {
           </CardContent>
         </Card>
       </motion.div>
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50">
+          <Spinner className="size-10 text-black" />
+        </div>
+      )}
     </div>
   );
 }
