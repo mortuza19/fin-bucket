@@ -1,0 +1,92 @@
+{
+  "users": {
+    "USER_ID_123": {
+      "email": "user@example.com",
+      "displayName": "Fin Bucket User",
+      "preferredCurrency": "USD",
+      "createdAt": "2026-04-16T00:00:00.000Z",
+      "updatedAt": "2026-04-16T00:00:00.000Z",
+      "accounts": {
+        "account_1": {
+          "name": "Everyday Checking",
+          "type": "checking",
+          "currency": "USD",
+          "balance": 1284.5,
+          "color": "#3B82F6",
+          "createdAt": "2026-04-16T00:00:00.000Z",
+          "updatedAt": "2026-04-16T00:00:00.000Z"
+        },
+        "account_2": {
+          "name": "Savings",
+          "type": "savings",
+          "currency": "USD",
+          "balance": 5420.0,
+          "color": "#10B981",
+          "createdAt": "2026-04-16T00:00:00.000Z",
+          "updatedAt": "2026-04-16T00:00:00.000Z"
+        }
+      },
+      "income": {
+        "income_1": {
+          "source": "Paycheck",
+          "amount": 3200,
+          "currency": "USD",
+          "frequency": "monthly",
+          "nextPaymentDate": "2026-05-01",
+          "active": true,
+          "createdAt": "2026-04-16T00:00:00.000Z",
+          "updatedAt": "2026-04-16T00:00:00.000Z"
+        }
+      },
+      "buckets": {
+        "bucket_1": {
+          "name": "Rent & Bills",
+          "targetAmount": 2000,
+          "currentAmount": 1500,
+          "currency": "USD",
+          "color": "#F97316",
+          "category": "Housing",
+          "isGoal": true,
+          "createdAt": "2026-04-16T00:00:00.000Z",
+          "updatedAt": "2026-04-16T00:00:00.000Z"
+        },
+        "bucket_2": {
+          "name": "Groceries",
+          "targetAmount": 500,
+          "currentAmount": 270,
+          "currency": "USD",
+          "color": "#8B5CF6",
+          "category": "Food",
+          "isGoal": false,
+          "createdAt": "2026-04-16T00:00:00.000Z",
+          "updatedAt": "2026-04-16T00:00:00.000Z"
+        }
+      },
+      "transactions": {
+        "transaction_1": {
+          "amount": 1200,
+          "currency": "USD",
+          "accountId": "account_1",
+          "bucketId": "bucket_1",
+          "type": "expense",
+          "category": "Housing",
+          "description": "April rent payment",
+          "date": "2026-04-01",
+          "createdAt": "2026-04-01T10:00:00.000Z",
+          "updatedAt": "2026-04-01T10:00:00.000Z"
+        },
+        "transaction_2": {
+          "amount": 3200,
+          "currency": "USD",
+          "accountId": "account_1",
+          "type": "income",
+          "category": "Salary",
+          "description": "Monthly salary",
+          "date": "2026-04-15",
+          "createdAt": "2026-04-15T08:00:00.000Z",
+          "updatedAt": "2026-04-15T08:00:00.000Z"
+        }
+      }
+    }
+  }
+}

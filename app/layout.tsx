@@ -12,6 +12,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// App metadata including the PWA manifest link used by Next.js.
+// This makes the browser treat the app as installable and provides PWA metadata.
 export const metadata: Metadata = {
   title: "Fin-Bucket",
   description: "Track your free to spend money with buckets",

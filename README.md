@@ -29,6 +29,15 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Notes for this project
+
+- `next.config.ts` is configured with PWA support using `@ducanh2912/next-pwa`.
+- `app/layout.tsx` links `manifest.json` so the browser can treat the app as installable.
+- `public/manifest.json` defines the PWA metadata and starter icon entries.
+- `lib/firebase.ts` initializes Firebase Auth and exports Google sign-in helpers.
+- `firestore.rules` locks Firestore access so users can only read/write their own data.
+- `lib/firestoreModel.ts` documents the Firestore collections for users, accounts, income, buckets, and transactions.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
