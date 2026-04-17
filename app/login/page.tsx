@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { signInWithGoogle } from "@/lib/firebase";
+import { createUser } from "@/routes/users";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -20,8 +21,8 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      await signInWithGoogle();
-
+      const result = await signInWithGoogle();
+      await createUser(result.user);
       // TODO: Replace this temporary flag with a lookup against the user document...
       // Use onboarding steps or a boolean flag to determine if the user is new.
       const isNewUser = true;
