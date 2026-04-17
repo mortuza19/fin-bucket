@@ -1,5 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // Firebase client setup for the web app.
 // Values must be provided via NEXT_PUBLIC_* env vars from Firebase project settings.
@@ -14,6 +15,7 @@ const firebaseConfig = {
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 export const googleProvider = new GoogleAuthProvider();
 
 // Sign in with Google using a popup flow.
