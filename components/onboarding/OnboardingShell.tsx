@@ -43,7 +43,7 @@ export function OnboardingShell({ user, initialStep }: Props) {
       await updateUserProfile(user.uid, {
         name: data.name,
         gender: data.gender ?? null,
-        dateOfBirth: data.dateOfBirth ?? null,
+        age: data.age,
         onboardingStep: 2,
       });
       setStepOneData(data);

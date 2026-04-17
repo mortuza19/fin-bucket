@@ -25,7 +25,7 @@ const stepOneSchema = z.object({
   gender: z
     .enum(["male", "female", "non-binary", "prefer-not-to-say"])
     .optional(),
-  dateOfBirth: z.string().optional(),
+  age: z.number().min(0, "Age must be a positive number").optional(),
 });
 
 export type StepOneData = z.infer<typeof stepOneSchema>;
@@ -49,7 +49,7 @@ export function StepOne({ user, defaultValues, loading, onNext }: Props) {
     defaultValues: {
       name: defaultValues?.name ?? user.displayName ?? "",
       gender: defaultValues?.gender,
-      dateOfBirth: defaultValues?.dateOfBirth ?? "",
+      age: defaultValues?.age,
     },
   });
 
@@ -62,7 +62,6 @@ export function StepOne({ user, defaultValues, loading, onNext }: Props) {
 
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() - 13);
-  const maxDateStr = maxDate.toISOString().split("T")[0];
 
   return (
     <form
@@ -158,12 +157,12 @@ export function StepOne({ user, defaultValues, loading, onNext }: Props) {
           <label className="text-sm font-medium">Date of birth</label>
 
           <Controller
-            name="dateOfBirth"
+            name="age"
             control={control}
             render={({ field }) => (
               <Input
-                type="date"
-                max={maxDateStr}
+                type="number"
+                placeholder="Your age"
                 disabled={loading}
                 {...field}
               />

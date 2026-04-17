@@ -21,7 +21,7 @@ export async function createUserProfileIfNotExists(
       email: user.email ?? "",
       photoURL: user.photoURL ?? null,
       gender: null,
-      dateOfBirth: null,
+      age: null,
       onboardingCompleted: false,
       onboardingStep: 1,
       currency: "INR",

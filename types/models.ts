@@ -17,7 +17,7 @@ export interface UserProfile {
   email: string;
   photoURL: string | null;
   gender: Gender | null;
-  dateOfBirth: string | null; // ISO: "YYYY-MM-DD"
+  age: number;
   onboardingCompleted: boolean;
   onboardingStep: number;
   currency: string;
