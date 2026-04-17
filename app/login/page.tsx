@@ -22,11 +22,8 @@ export default function LoginPage() {
 
     try {
       const result = await signInWithGoogle();
-      await createUser(result.user);
-      // TODO: Replace this temporary flag with a lookup against the user document...
-      // Use onboarding steps or a boolean flag to determine if the user is new.
-      const isNewUser = true;
-      router.push(isNewUser ? "/onboarding" : "/dashboard");
+      const user =await createUser(result.user);
+      router.push(!user?.onboardingCompleted ? "/onboarding" : "/dashboard");
     } catch (err) {
       console.error("Google sign-in failed", err);
       const message = "We couldn\'t sign you in. Please try again or refresh the page.";

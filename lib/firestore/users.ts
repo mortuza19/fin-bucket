@@ -11,7 +11,7 @@ import { UserProfile } from "@/types/models";
 
 export async function createUserProfileIfNotExists(
   user: FirebaseUser
-): Promise<void> {
+): Promise<UserProfile | null> {
   const ref = doc(db, "users", user.uid);
   const snap = await getDoc(ref);
   if (!snap.exists()) {
@@ -28,7 +28,8 @@ export async function createUserProfileIfNotExists(
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
-  }
+  } 
+  return getUserProfile(user.uid);
 }
 
 export async function getUserProfile(uid: string): Promise<UserProfile | null> {
